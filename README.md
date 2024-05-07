@@ -46,7 +46,7 @@ python3 accuracy_eva/export_cnn_shapes.py --output_path $PATH_TO_SAVE_PKL --mode
 
 # Please put the pickle in the same directory of `workspace/final-project`
 # Second construct the workloads for simulation
-python3 scripts/construct_workloads2.py $PKL_NAME_WITHOUT_SUFFIX
+python3 workspace/final-project/example_designs/scripts/construct_workloads2.py $PKL_NAME_WITHOUT_SUFFIX
 
 $ARCH=eyeriss_like # or `simple_output_stationary` or `simple_output_stationary`
 
