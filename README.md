@@ -20,8 +20,7 @@ We used PyTorch for the experiments and verification regarding the models' accur
 The instructions for accuracy evaluation can be found as below. 
 
 ```shell
-cd accuracy_eval
-python train.py --exp_name $EXP_NAME --lr $LEARNING_RATE --model_name $MODEL_NAME
+python3 accuracy_eval/train.py --exp_name $EXP_NAME --lr $LEARNING_RATE --model_name $MODEL_NAME
 ```
 
 where `$EXP_NAME` is used to create experiment directory, `$LEARNING_RATE` is your learning rate, and `$MODEL_NAME` is your network, such as `resnet50`.
