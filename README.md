@@ -17,9 +17,10 @@ This project aims to benchmark and evaluate existing Convolutional Neural Networ
 
 We used PyTorch for the experiments and verification regarding the models' accuracy. The base models we used in this project including the MobileNet, ResNet family, and DenseNet family. 
 
-The instructions for accuracy evaluation can be found here. 
+The instructions for accuracy evaluation can be found as below. 
 
 ```shell
+cd accuracy_eval
 python train.py --exp_name $EXP_NAME --lr $LEARNING_RATE --model_name $MODEL_NAME
 ```
 
