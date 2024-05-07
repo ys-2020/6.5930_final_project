@@ -48,7 +48,7 @@ python3 accuracy_eva/export_cnn_shapes.py --output_path $PATH_TO_SAVE_PKL --mode
 # Second construct the workloads for simulation
 python3 workspace/final-project/example_designs/scripts/construct_workloads2.py $PKL_NAME_WITHOUT_SUFFIX
 
-$ARCH=eyeriss_like # or `simple_output_stationary` or `simple_output_stationary`
+ARCH=eyeriss_like # or `simple_output_stationary` or `simple_output_stationary`
 
 rm -r example_designs/ARCH/outputs
 python3 run_example_designs.py --architecture $ARCH --problem $PKL_NAME_WITHOUT_SUFFIX
