@@ -50,9 +50,9 @@ python3 workspace/final-project/example_designs/scripts/construct_workloads2.py 
 
 ARCH=eyeriss_like # or `simple_output_stationary` or `simple_output_stationary`
 
-rm -r example_designs/ARCH/outputs
-python3 run_example_designs.py --architecture $ARCH --problem $PKL_NAME_WITHOUT_SUFFIX
-python3 summarize_result.py --logs example_designs/$ARCH/outputs
+rm -r workspace/final-project/example_designs/example_designs/$ARCH/outputs
+python3 workspace/final-project/example_designs/run_example_designs.py --architecture $ARCH --problem $PKL_NAME_WITHOUT_SUFFIX
+python3 workspace/final-project/example_designs/summarize_result.py --logs workspace/final-project/example_designs/example_designs/$ARCH/outputs
 ```
 
 ## Results
