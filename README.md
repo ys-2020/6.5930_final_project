@@ -17,8 +17,13 @@ This project aims to benchmark and evaluate existing Convolutional Neural Networ
 
 We used PyTorch for the experiments and verification regarding the models' accuracy. The base models we used in this project including the MobileNet, ResNet family, and DenseNet family. 
 
-The instructions for accuracy evaluation can be found here. **[TODO]**
+The instructions for accuracy evaluation can be found here. 
 
+```shell
+python train.py --exp_name $EXP_NAME --lr $LEARNING_RATE --model_name $MODEL_NAME
+```
+
+where `$EXP_NAME` is used to create experiment directory, `$LEARNING_RATE` is your learning rate, and `$MODEL_NAME` is your network, such as `resnet50`.
 
 ### Energy and Latency Measurements with Hardware Simulation
 
@@ -33,9 +38,22 @@ docker-compose pull
 docker-compose up
 ```
 
-After launching the docker, please follow the instructions here **[TODO]** for the simulation results.
+After launching the docker, please follow the instructions here for the simulation results.
 
+```shell
+# First export layer shape pickle
+python3 accuracy_eva/export_cnn_shapes.py --output_path $PATH_TO_SAVE_PKL --model_name $MODEL_NAME
 
+# Please put the pickle in the same directory of `workspace/final-project`
+# Second construct the workloads for simulation
+python3 scripts/construct_workloads2.py $PKL_NAME_WITHOUT_SUFFIX
+
+$ARCH=eyeriss_like # or `simple_output_stationary` or `simple_output_stationary`
+
+rm -r example_designs/ARCH/outputs
+python3 run_example_designs.py --architecture $ARCH --problem $PKL_NAME_WITHOUT_SUFFIX
+python3 summarize_result.py --logs example_designs/$ARCH/outputs
+```
 
 ## Results
 
